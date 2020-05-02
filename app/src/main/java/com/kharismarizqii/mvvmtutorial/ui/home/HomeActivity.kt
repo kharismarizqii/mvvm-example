@@ -2,6 +2,7 @@ package com.kharismarizqii.mvvmtutorial.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.kharismarizqii.mvvmtutorial.R
 
 class HomeActivity : AppCompatActivity() {
 

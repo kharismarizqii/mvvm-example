@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.kharismarizqii.mvvmtutorial.data.repository.UserRepository
 import com.kharismarizqii.mvvmtutorial.util.ApiException
 import com.kharismarizqii.mvvmtutorial.util.Coroutines
+import com.kharismarizqii.mvvmtutorial.util.NoInternetException
 
 class AuthViewModel(
     private val repository: UserRepository
@@ -33,6 +34,8 @@ class AuthViewModel(
                 }
                 authListener?.onFailure(authResponse.message!!)
             }catch (e: ApiException){
+                authListener?.onFailure(e.message!!)
+            }catch (e: NoInternetException){
                 authListener?.onFailure(e.message!!)
             }
 
